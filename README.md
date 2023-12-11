@@ -1,12 +1,23 @@
 # YOLO v8
 
+## 模型训练
+
+```python
+# train
+from ultralytics import YOLO
+model = YOLO("/root/result/PConv.yaml")
+# 加载预训练模型
+model.load("/root/result/yolov8n.pt")
+model.train(data="/root/result/visdrone.yaml", epochs=200, batch=32) 
+```
+
 ## 改进流程
 
-- 编写模块算法，放在 ultralytics/nn 路径
+- 编写模块算法，放在 ultralytics/nn/attention 路径
 - 更改 ultralytics/nn/tasks.py 文件
   - 注册新模块
   - 更改 parse_model 函数
-- 更改配置文件，放在 ultralytics/cfg/models/v8 路径
+- 更改配置文件
 
 ## 现有方法
 
