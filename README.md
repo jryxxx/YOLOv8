@@ -183,25 +183,6 @@
 
   - 实验结果
 
-- deformable_LKA
-  - 算法实现 attention/deformable_LKA.py
-  - 配置文件 cfg/deformable_LKA.yaml
-  - ultralytics/nn/tasks.py 修改
-
-  ```python
-  from ultralytics.nn.attention.deformable_LKA import C2f_deformable_LKA
-  def parse_model(d, ch, verbose=True):
-    # 加入 C2f_deformable_LKA
-    if m in (Classify, Conv, ConvTranspose, GhostConv, Bottleneck, GhostBottleneck, SPP, SPPF, DWConv, Focus,
-                 BottleneckCSP, C1, C2, C2f, C3, C3TR, C3Ghost, nn.ConvTranspose2d, DWConvTranspose2d, C3x, C2f_deformable_LKA):
-      # 加入 C2f_deformable_LKA
-      if m in (BottleneckCSP, C1, C2, C2f, C3, C3TR, C3Ghost, C3x, C2f_deformable_LKA):
-        args.insert(2, n)
-        n = 1
-  ```
-
-  - 实验结果
-
 - DSConv
   - 算法实现 attention/DSConv.py
   - 配置文件 cfg/DSConv.yaml
@@ -332,7 +313,6 @@
   sophia.py -> envs\lib\site-packages\torch\optim
   修改 __init__.py -> 加入 from .sophia import SophiaG
   ```
-
 
 ## 问题总结
 
