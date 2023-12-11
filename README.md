@@ -23,8 +23,8 @@
                  BottleneckCSP, C1, C2, C2f, C3, C3TR, C3Ghost, nn.ConvTranspose2d, DWConvTranspose2d, C3x, C2f_LSKA_Attention):
     # 加入 C2f_LSKA_Attention
     if m in (BottleneckCSP, C1, C2, C2f, C3, C3TR, C3Ghost, C3x, C2f_LSKA_Attention):
-                args.insert(2, n)
-                n = 1
+      args.insert(2, n)
+      n = 1
   ```
 
   - 实验结果 ![Alt text](results/n/resLSKA2.png)
