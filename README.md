@@ -72,10 +72,10 @@
   def parse_model(d, ch, verbose=True):
     # 加入 SimAM
     elif m is SimAM:
-            c1, c2 = ch[f], args[0]
-            if c2 != nc:
-                c2 = make_divisible(min(c2, max_channels) * width, 8)
-            args = [c1, *args[1:]]
+      c1, c2 = ch[f], args[0]
+      if c2 != nc:
+          c2 = make_divisible(min(c2, max_channels) * width, 8)
+      args = [c1, *args[1:]]
   ```
 
   - 实验结果
@@ -103,7 +103,7 @@
 ## 问题总结
 
 - 注意事项
-  - 保持模块输入输出通道数目一致
+  - 根据导入模块进行相应设置
 - 更改 backbone 及 head 后，预训练权重是如何加载的
   - YOLO v8
 
