@@ -21,6 +21,10 @@ model.train(data="/root/result/visdrone.yaml", epochs=200, batch=32)
 
 ## 现有方法
 
+### yolov8-改进
+
+### 方法示例
+
 - LSKA 模块
   - 算法实现 attention/LSKA.py
   - 配置文件 cfg/LSKA.yaml

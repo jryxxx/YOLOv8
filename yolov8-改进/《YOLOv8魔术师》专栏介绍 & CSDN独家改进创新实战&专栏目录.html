@@ -1,0 +1,186 @@
+<div id="article_content" class="article_content clearfix">
+        <link rel="stylesheet" href="https://csdnimg.cn/release/blogv2/dist/mdeditor/css/editerView/kdoc_html_views-1a98987dfd.css">
+        <link rel="stylesheet" href="https://csdnimg.cn/release/blogv2/dist/mdeditor/css/editerView/ck_htmledit_views-dc4a025e85.css">
+                <div id="content_views" class="htmledit_views">
+                    <h4 id="%F0%9F%92%A1%F0%9F%92%A1%F0%9F%92%A1Yolov8%E9%AD%94%E6%9C%AF%E5%B8%88%EF%BC%8C%E7%8B%AC%E5%AE%B6%E9%A6%96%E5%8F%91%E5%88%9B%E6%96%B0%EF%BC%88%E5%8E%9F%E5%88%9B%EF%BC%89%EF%BC%8C%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%8C%E9%80%82%E7%94%A8%E4%BA%8EYolov5%E3%80%81Yolov7%E3%80%81Yolov8%E7%AD%89%E5%90%84%E4%B8%AAYolo%E7%B3%BB%E5%88%97%EF%BC%8C%E4%B8%93%E6%A0%8F%E6%96%87%E7%AB%A0%E6%8F%90%E4%BE%9B%E6%AF%8F%E4%B8%80%E6%AD%A5%E6%AD%A5%E9%AA%A4%E5%92%8C%E6%BA%90%E7%A0%81%EF%BC%8C%E8%BD%BB%E6%9D%BE%E5%B8%A6%E4%BD%A0%E4%B8%8A%E6%89%8B%E9%AD%94%E6%94%B9%E7%BD%91%E7%BB%9C"><a name="t0"></a>💡💡💡<span style="color:#fe2c24;">Yolov8魔术师</span>，<span style="color:#a2e043;">独家首发创新（原创）</span>，<span style="color:#1c7331;"><strong>持续更新</strong></span><span style="color:#fe2c24;">，</span>适用于Yolov5、Yolov7、Yolov8等各个Yolo系列，<span style="color:#38d8f0;">专栏文章提供每一步步骤和源码，轻松带你上手魔改网络</span></h4> 
+<p></p> 
+<h4 id="%F0%9F%92%A1%F0%9F%92%A1%F0%9F%92%A1%E9%87%8D%E7%82%B9%EF%BC%9A%E9%80%9A%E8%BF%87%E6%9C%AC%E4%B8%93%E6%A0%8F%E7%9A%84%E9%98%85%E8%AF%BB%EF%BC%8C%E5%90%8E%E7%BB%AD%E4%BD%A0%E4%B9%9F%E5%8F%AF%E4%BB%A5%E8%87%AA%E5%B7%B1%E9%AD%94%E6%94%B9%E7%BD%91%E7%BB%9C%EF%BC%8C%E5%9C%A8%E7%BD%91%E7%BB%9C%E4%B8%8D%E5%90%8C%E4%BD%8D%E7%BD%AE%EF%BC%88Backbone%E3%80%81head%E3%80%81detect%E3%80%81loss%E7%AD%89%EF%BC%89%E8%BF%9B%E8%A1%8C%E9%AD%94%E6%94%B9%EF%BC%8C%E5%AE%9E%E7%8E%B0%E5%88%9B%E6%96%B0%EF%BC%81%EF%BC%81%EF%BC%81"><a name="t1"></a>💡💡💡重点：<span style="color:#956fe7;">通过本专栏的阅读，后续你也可以自己魔改网络，<strong>在网络不同位置（Backbone、head、detect、loss等）进行魔改，实现创新！！！</strong></span></h4> 
+<p style="text-align:center;"><span style="color:#956fe7;"><strong><img alt="" src="https://img-blog.csdnimg.cn/bd945cd0087c4d1ca6257c9a9b6fba17.jpeg"></strong></span></p> 
+<h4 id="%E4%B8%93%E6%A0%8F%E4%BB%8B%E7%BB%8D%EF%BC%9A"><a name="t2"></a><span style="color:#fe2c24;"><strong>专栏介绍：</strong></span></h4> 
+<h4 id="%E2%9C%A8%E2%9C%A8%E2%9C%A8%E5%8E%9F%E5%88%9B%E9%AD%94%E6%94%B9%E7%BD%91%E7%BB%9C%E3%80%81%E5%A4%8D%E7%8E%B0%E5%89%8D%E6%B2%BF%E8%AE%BA%E6%96%87%EF%BC%8C%E7%BB%84%E5%90%88%E4%BC%98%E5%8C%96%E5%88%9B%E6%96%B0"><a name="t3"></a>✨✨✨<span style="color:#38d8f0;">原创魔改网络、复现前沿论文，组合优化创新</span></h4> 
+<h4 id="%F0%9F%9A%80%F0%9F%9A%80%F0%9F%9A%80%E5%B0%8F%E7%9B%AE%E6%A0%87%E3%80%81%E9%81%AE%E6%8C%A1%E7%89%A9%E3%80%81%E9%9A%BE%E6%A0%B7%E6%9C%AC%E6%80%A7%E8%83%BD%E6%8F%90%E5%8D%87"><a name="t4"></a>🚀🚀🚀<span style="color:#4da8ee;">小目标、遮挡物、难样本性能提升</span></h4> 
+<h4 id="%F0%9F%8D%89%F0%9F%8D%89%F0%9F%8D%89%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E4%B8%AD%EF%BC%8C%E5%AE%9A%E6%9C%9F%E6%9B%B4%E6%96%B0%E4%B8%8D%E5%90%8C%E6%95%B0%E6%8D%AE%E9%9B%86%E6%B6%A8%E7%82%B9%E6%83%85%E5%86%B5"><a name="t5"></a>🍉🍉🍉<span style="color:#a2e043;">持续更新中，定期更新不同数据集涨点情况</span></h4> 
+<h4 id="%E6%9C%AC%E4%B8%93%E6%A0%8F%E6%8F%90%E4%BE%9B%E6%AF%8F%E4%B8%80%E6%AD%A5%E6%94%B9%E8%BF%9B%E6%AD%A5%E9%AA%A4%E5%92%8C%E6%BA%90%E7%A0%81%EF%BC%8C%E5%BC%80%E7%AE%B1%E5%8D%B3%E7%94%A8%EF%BC%8C%E5%9C%A8%E4%BD%A0%E7%9A%84%E6%95%B0%E6%8D%AE%E9%9B%86%E4%B8%8B%E8%BD%BB%E6%9D%BE%E6%B6%A8%E7%82%B9%2C"><a name="t6"></a><span style="color:#ffd900;">本专栏提供每一步改进步骤和源码，开箱即用，在你的数据集下轻松涨点,</span></h4> 
+<h3 id="%E9%80%9A%E8%BF%87%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6%E3%80%81%E5%B0%8F%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E3%80%81Backbone%26Head%E4%BC%98%E5%8C%96%E3%80%81%C2%A0IOU%26Loss%E4%BC%98%E5%8C%96%E3%80%81%E4%BC%98%E5%8C%96%E5%99%A8%E6%94%B9%E8%BF%9B%E3%80%81%E5%8D%B7%E7%A7%AF%E5%8F%98%E4%BD%93%E6%94%B9%E8%BF%9B%E3%80%81%E8%BD%BB%E9%87%8F%E7%BA%A7%E7%BD%91%E7%BB%9C%E7%BB%93%E5%90%88yolov8%E7%AD%89%E6%96%B9%E9%9D%A2%E8%BF%9B%E8%A1%8C%E5%B1%95%E5%BC%80"><a name="t7"></a><span style="color:#956fe7;">通过注意力机制、小目标检测、Backbone&amp;Head优化、<strong>&nbsp;IOU&amp;Loss优化、</strong>优化器改进、卷积变体改进、轻量级网络结合yolov8等方面进行展开</span></h3> 
+<h3 id="%E4%B8%93%E6%A0%8F%E9%93%BE%E6%8E%A5%E5%A6%82%E4%B8%8B%EF%BC%9A"><a name="t8"></a><span style="color:#956fe7;">专栏链接如下：</span></h3> 
+<p><a href="https://blog.csdn.net/m0_63774211/category_12289773.html" title="https://blog.csdn.net/m0_63774211/category_12289773.html">https://blog.csdn.net/m0_63774211/category_12289773.html</a></p> 
+<p id="main-toc"><strong>目录</strong></p> 
+<p id="" style="margin: 0px 0px 2px 48px; padding-left: 24px;"><a href="#t9" target="_self">23年最新优化点，创新十足：</a></p> 
+<p id="" style="margin: 0px 0px 2px 48px; padding-left: 24px;"><a href="#t10" target="_self">注意力机制，开箱即用：</a></p> 
+<p id="" style="margin: 0px 0px 2px 48px; padding-left: 24px;"><a href="#t11" target="_self">Backbone&amp;Head优化：</a></p> 
+<p id="" style="margin: 0px 0px 2px 48px; padding-left: 24px;"><a href="#t12" target="_self">&nbsp;IOU&amp;Loss优化：</a></p> 
+<p id="" style="margin: 0px 0px 2px 48px; padding-left: 24px;"><a href="#t13" target="_self">小目标性能提升：</a></p> 
+<p id="" style="margin: 0px 0px 2px 48px; padding-left: 24px;"><a href="#t14" target="_self">优化器改进：</a></p> 
+<p id="" style="margin: 0px 0px 2px 48px; padding-left: 24px;"><a href="#t15" target="_self">卷积变体改进：</a></p> 
+<p id="" style="margin: 0px 0px 2px 48px; padding-left: 24px;"><a href="#t16" target="_self">轻量级网络结合yolov8:</a></p> 
+<p></p> 
+<h3 id="23%E5%B9%B4%E6%9C%80%E6%96%B0%E4%BC%98%E5%8C%96%E7%82%B9%EF%BC%8C%E5%88%9B%E6%96%B0%E5%8D%81%E8%B6%B3%EF%BC%9A"><a name="t9"></a>23年最新优化点，创新十足：</h3> 
+<p><span style="color:#fe2c24;"><strong>1. ICLR2023轻量高效注意力模块Sea_AttentionBlock</strong></span></p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/131122041" title="Yolov8涨点技巧：轻量高效注意力模块Sea_AttentionBlock | ICLR2023|SeaFormer：轻量级语义分割算法,复旦大学和腾讯联合提出_AI小怪兽的博客-CSDN博客">Yolov8涨点技巧：轻量高效注意力模块Sea_AttentionBlock | ICLR2023|SeaFormer：轻量级语义分割算法,复旦大学和腾讯联合提出_AI小怪兽的博客-CSDN博客</a></p> 
+<p><span style="color:#fe2c24;"><strong>2.ICASSP2023 EMA基于跨空间学习的高效多尺度注意力:</strong></span></p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/131370577" title="Yolov8改进---注意力机制：ICASSP2023 EMA基于跨空间学习的高效多尺度注意力、效果优于ECA、CBAM、CA | 小目标涨点明显_AI小怪兽的博客-CSDN博客">Yolov8改进---注意力机制：ICASSP2023 EMA基于跨空间学习的高效多尺度注意力、效果优于ECA、CBAM、CA | 小目标涨点明显_AI小怪兽的博客-CSDN博客</a></p> 
+<p><strong><span style="color:#fe2c24;">&nbsp;3.CVPR 2023 BiFormer: 基于动态稀疏注意力构建高效金字塔网络架构:</span></strong></p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/130260561" title="Yolov8 引入CVPR 2023 BiFormer: 基于动态稀疏注意力构建高效金字塔网络架构，对小目标涨点明显_AI小怪兽的博客-CSDN博客">Yolov8 引入CVPR 2023 BiFormer: 基于动态稀疏注意力构建高效金字塔网络架构，对小目标涨点明显_AI小怪兽的博客-CSDN博客</a></p> 
+<p><span style="color:#fe2c24;"><strong>4.原创独家首发 | 可变形自注意力Attention：&nbsp;</strong>&nbsp;</span></p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/131601629" title="YoloV8改进：原创独家首发 | 可变形自注意力Attention，暴力涨点 | 即插即用系列_AI小怪兽的博客-CSDN博客">YoloV8改进：原创独家首发 | 可变形自注意力Attention，暴力涨点 | 即插即用系列_AI小怪兽的博客-CSDN博客</a></p> 
+<p><span style="color:#fe2c24;"><strong>5. ICCV 2023LSKNet：遥感旋转目标检测新SOTA | LSKblockAttention助力小目标检测&nbsp;：&nbsp;</strong></span></p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/131934052" title="Yolov8 引入ICCV 2023 | 南开大学提出LSKNet：遥感旋转目标检测新SOTA | LSKblockAttention助力小目标检测_AI小怪兽的博客-CSDN博客">Yolov8 引入ICCV 2023 | 南开大学提出LSKNet：遥感旋转目标检测新SOTA | LSKblockAttention助力小目标检测_AI小怪兽的博客-CSDN博客</a></p> 
+<p><span style="color:#fe2c24;"><strong>6.原创独家首发 | 多维协作注意模块MCA：</strong>&nbsp;</span></p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/131959116" title="YoloV8改进：原创独家首发 | 多维协作注意模块MCA，暴力涨点，效果秒杀ECA、SRM、CBAM等 | 即插即用系列_AI小怪兽的博客-CSDN博客">YoloV8改进：原创独家首发 | 多维协作注意模块MCA，暴力涨点，效果秒杀ECA、SRM、CBAM等 | 即插即用系列_AI小怪兽的博客-CSDN博客</a></p> 
+<p><span style="color:#fe2c24;"><strong>7.通道优先卷积注意力（CPCA），2023</strong></span></p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/132301216" title="YoloV8优化：通道优先卷积注意力，效果秒杀CBAM和SE等 | 即插即用系列_AI小怪兽的博客-CSDN博客">YoloV8优化：通道优先卷积注意力，效果秒杀CBAM和SE等 | 即插即用系列_AI小怪兽的博客-CSDN博客</a></p> 
+<p><span style="color:#fe2c24;"><strong>8.可变形大核注意力，超越自注意力| 2023.8月最新发表</strong></span></p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/132889451" title="全网原创首发Yolov8涨点神器：可变形大核注意力，超越自注意力，实现暴力涨点 | 2023.8月最新发表_AI小怪兽的博客-CSDN博客">全网原创首发Yolov8涨点神器：可变形大核注意力，超越自注意力，实现暴力涨点 | 2023.8月最新发表_AI小怪兽的博客-CSDN博客</a></p> 
+<h3><a name="t10"></a></h3> 
+<p><span style="color:#fe2c24;"><strong>9.华为诺亚2023极简的神经网络模型 VanillaNet---VanillaBlock助力检测:</strong></span></p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/130901017" title="首发Yolov8涨点神器：华为诺亚2023极简的神经网络模型 VanillaNet---VanillaBlock助力检测，实现暴力涨点_AI小怪兽的博客-CSDN博客">首发Yolov8涨点神器：华为诺亚2023极简的神经网络模型 VanillaNet---VanillaBlock助力检测，实现暴力涨点_AI小怪兽的博客-CSDN博客</a></p> 
+<p><span style="color:#fe2c24;"><strong>10.&nbsp;ICCV 2023 最新开源移动端网络架构 RepViT：</strong></span></p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/131939062" title="Yolov8引入 清华 ICCV 2023 最新开源移动端网络架构 RepViT | RepViTBlock即插即用，助力检测_AI小怪兽的博客-CSDN博客">Yolov8引入 清华 ICCV 2023 最新开源移动端网络架构 RepViT | RepViTBlock即插即用，助力检测_AI小怪兽的博客-CSDN博客</a></p> 
+<p><span style="color:#fe2c24;"><strong>11. ELSEVIER 2023 MPDIoU新型边界框相似度度量 ：</strong></span></p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/131991064" title="Yolov8损失函数改进：MPDIoU新型边界框相似度度量，效果秒杀GIoU 、 DIoU 、CIoU 、 EIoU等 | ELSEVIER 2023_AI小怪兽的博客-CSDN博客">Yolov8损失函数改进：MPDIoU新型边界框相似度度量，效果秒杀GIoU 、 DIoU 、CIoU 、 EIoU等 | ELSEVIER 2023_AI小怪兽的博客-CSDN博客</a></p> 
+<p><span style="color:#fe2c24;"><strong>12.CVPR2023 InceptionNeXt，助力小目标检测：</strong></span></p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/130235709" title="涨点神器：CVPR2023 InceptionNeXt当Inception遇见ConvNeXt，在Yolov8即插即用，小目标检测涨点明显_AI小怪兽的博客-CSDN博客">涨点神器：CVPR2023 InceptionNeXt当Inception遇见ConvNeXt，在Yolov8即插即用，小目标检测涨点明显_AI小怪兽的博客-CSDN博客</a></p> 
+<p></p> 
+<p><strong><span style="color:#fe2c24;">13.谷歌2023强势推出优化器Lion：</span></strong></p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/130222697" title="涨点技巧： 谷歌强势推出优化器Lion，引入到Yolov8/Yolv5,内存更小、效率更高，秒杀Adam(W)_AI小怪兽的博客-CSDN博客">涨点技巧： 谷歌强势推出优化器Lion，引入到Yolov8/Yolv5,内存更小、效率更高，秒杀Adam(W)_AI小怪兽的博客-CSDN博客</a></p> 
+<p><span style="color:#fe2c24;"><strong>14.Adam该换了！斯坦福2023最新Sophia优化器，比Adam快2倍：</strong></span></p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/130912702" title="首发Yolov8优化：Adam该换了！斯坦福最新Sophia优化器，比Adam快2倍 | 2023.5月斯坦福最新成果_最新的优化器_AI小怪兽的博客-CSDN博客">首发Yolov8优化：Adam该换了！斯坦福最新Sophia优化器，比Adam快2倍 | 2023.5月斯坦福最新成果_最新的优化器_AI小怪兽的博客-CSDN博客</a></p> 
+<p><span style="color:#fe2c24;"><strong>15.CVPR2023 InternImage：注入新机制，扩展DCNv3:</strong></span></p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/130224460" title="涨点神器：Yolov8引入CVPR2023 InternImage：注入新机制，扩展DCNv3，助力涨点，COCO新纪录65.4mAP！_AI小怪兽的博客-CSDN博客">涨点神器：Yolov8引入CVPR2023 InternImage：注入新机制，扩展DCNv3，助力涨点，COCO新纪录65.4mAP！_AI小怪兽的博客-CSDN博客</a></p> 
+<p><span style="color:#fe2c24;"><strong>16.CVPR2023 FasterNet远超ShuffleNet、MobileNet、MobileViT，引入PConv结构:</strong></span></p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/130225022" title="涨点神器：Yolov8改进CVPR2023 FasterNet远超ShuffleNet、MobileNet、MobileViT，引入PConv结构map涨点的同时进一步降低参数量_AI小怪兽的博客-CSDN博客">涨点神器：Yolov8改进CVPR2023 FasterNet远超ShuffleNet、MobileNet、MobileViT，引入PConv结构map涨点的同时进一步降低参数量_AI小怪兽的博客-CSDN博客</a></p> 
+<p><span style="color:#fe2c24;"><strong>17.CVPR2023 SCConv：空间和通道重建卷积：</strong></span></p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/131958195" title="Yolov8引入CVPR2023 SCConv：空间和通道重建卷积，即插即用，助力检测_AI小怪兽的博客-CSDN博客">Yolov8引入CVPR2023 SCConv：空间和通道重建卷积，即插即用，助力检测_AI小怪兽的博客-CSDN博客</a></p> 
+<p><span style="color:#fe2c24;">18.<strong>&nbsp;可变形大核注意力，超越自注意力| 2023.8月最新发表</strong>&nbsp;</span></p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/132889451" title="全网原创首发Yolov8涨点神器：可变形大核注意力，超越自注意力，实现暴力涨点 | 2023.8月最新发表_AI小怪兽的博客-CSDN博客">全网原创首发Yolov8涨点神器：可变形大核注意力，超越自注意力，实现暴力涨点 | 2023.8月最新发表_AI小怪兽的博客-CSDN博客</a></p> 
+<p><span style="color:#fe2c24;"><strong>19.动态蛇形卷积（Dynamic Snake Convolution）&nbsp;| ICCV2023&nbsp;</strong>&nbsp;</span><a href="https://cv2023.blog.csdn.net/article/details/132689577" title="首发Yolov8涨点神器：动态蛇形卷积（Dynamic Snake Convolution），实现暴力涨点 | ICCV2023_AI小怪兽的博客-CSDN博客">首发Yolov8涨点神器：动态蛇形卷积（Dynamic Snake Convolution），实现暴力涨点 | ICCV2023_AI小怪兽的博客-CSDN博客</a></p> 
+<h3><a name="t11"></a></h3> 
+<p>&nbsp;</p> 
+<p></p> 
+<p>&nbsp;</p> 
+<h3 id="%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6%EF%BC%8C%E5%BC%80%E7%AE%B1%E5%8D%B3%E7%94%A8%EF%BC%9A"><a name="t12"></a><span style="color:#fe2c24;">注意力机制，开箱即用：</span></h3> 
+<p>1.<a href="https://so.csdn.net/so/search?q=%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6&amp;spm=1001.2101.3001.7020" target="_blank" class="hl hl-1" data-report-view="{&quot;spm&quot;:&quot;1001.2101.3001.7020&quot;,&quot;dest&quot;:&quot;https://so.csdn.net/so/search?q=%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6&amp;spm=1001.2101.3001.7020&quot;,&quot;extra&quot;:&quot;{\&quot;searchword\&quot;:\&quot;注意力机制\&quot;}&quot;}" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.7020&quot;,&quot;dest&quot;:&quot;https://so.csdn.net/so/search?q=%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6&amp;spm=1001.2101.3001.7020&quot;,&quot;extra&quot;:&quot;{\&quot;searchword\&quot;:\&quot;注意力机制\&quot;}&quot;}" data-tit="注意力机制" data-pretit="注意力机制">注意力机制</a>：捕捉空间上的局部关系和全局关系，CoordAttention</p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/130558219" title="Yolov8改进---注意力机制：CoordAttention，效果秒杀CBAM、SE_AI小怪兽的博客-CSDN博客">Yolov8改进---注意力机制：CoordAttention，效果秒杀CBAM、SE_AI小怪兽的博客-CSDN博客</a></p> 
+<p>2.注意力机制：跨模态Transformer 注意力---CoTAttention</p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/130559130" title="Yolov8改进---注意力机制：CoTAttention，效果秒杀CBAM、SE_AI小怪兽的博客-CSDN博客">Yolov8改进---注意力机制：CoTAttention，效果秒杀CBAM、SE_AI小怪兽的博客-CSDN博客</a></p> 
+<p>3.注意力机制：改机的自注意机制Polarized Self-Attention</p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/130560024" title="Yolov8改进---注意力机制：Polarized Self-Attention，效果秒杀CBAM、SE_AI小怪兽的博客-CSDN博客">Yolov8改进---注意力机制：Polarized Self-Attention，效果秒杀CBAM、SE_AI小怪兽的博客-CSDN博客</a>4.SimAM（无参Attention）和NAM（基于标准化的注意力模块）：</p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/130573329" title="Yolov8改进---注意力机制： SimAM（无参Attention）和NAM（基于标准化的注意力模块），效果秒杀CBAM、SE_AI小怪兽的博客-CSDN博客">Yolov8改进---注意力机制： SimAM（无参Attention）和NAM（基于标准化的注意力模块），效果秒杀CBAM、SE_AI小怪兽的博客-CSDN博客</a></p> 
+<p>5.注意力机制：双重注意力机制DoubleAttention、多个 SK 块的堆叠SKAttention</p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/130585754" title="Yolov8改进---注意力机制：DoubleAttention、SKAttention，SENet进阶版本_AI小怪兽的博客-CSDN博客">Yolov8改进---注意力机制：DoubleAttention、SKAttention，SENet进阶版本_AI小怪兽的博客-CSDN博客</a></p> 
+<p>6.上下文增强和特征细化网络ContextAggregation：</p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/130886034" title="Yolov8涨点神器：用于微小目标检测的上下文增强和特征细化网络ContextAggregation，助力小目标检测，暴力涨点_AI小怪兽的博客-CSDN博客">Yolov8涨点神器：用于微小目标检测的上下文增强和特征细化网络ContextAggregation，助力小目标检测，暴力涨点_AI小怪兽的博客-CSDN博客</a></p> 
+<p>7. ICLR2023轻量高效注意力模块Sea_AttentionBlock：</p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/131122041" title="Yolov8涨点技巧：轻量高效注意力模块Sea_AttentionBlock | ICLR2023|SeaFormer：轻量级语义分割算法,复旦大学和腾讯联合提出_AI小怪兽的博客-CSDN博客">Yolov8涨点技巧：轻量高效注意力模块Sea_AttentionBlock | ICLR2023|SeaFormer：轻量级语义分割算法,复旦大学和腾讯联合提出_AI小怪兽的博客-CSDN博客</a></p> 
+<p><span style="color:#ff9900;"><strong>8.ICASSP2023 EMA基于跨空间学习的高效多尺度注意力:</strong></span></p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/131370577" title="Yolov8改进---注意力机制：ICASSP2023 EMA基于跨空间学习的高效多尺度注意力、效果优于ECA、CBAM、CA | 小目标涨点明显_AI小怪兽的博客-CSDN博客">Yolov8改进---注意力机制：ICASSP2023 EMA基于跨空间学习的高效多尺度注意力、效果优于ECA、CBAM、CA | 小目标涨点明显_AI小怪兽的博客-CSDN博客</a></p> 
+<p><span style="color:#ff9900;"><strong>9.CVPR 2023 BiFormer: 基于动态稀疏注意力构建高效金字塔网络架构:</strong></span></p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/130260561" title="Yolov8 引入CVPR 2023 BiFormer: 基于动态稀疏注意力构建高效金字塔网络架构，对小目标涨点明显_AI小怪兽的博客-CSDN博客">Yolov8 引入CVPR 2023 BiFormer: 基于动态稀疏注意力构建高效金字塔网络架构，对小目标涨点明显_AI小怪兽的博客-CSDN博客</a></p> 
+<p>10.MobileViTAttention，MobileViT移动端轻量通用视觉transformer：</p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/130899977" title="Yolov8涨点技巧：MobileViTAttention助力小目标检测，涨点显著，MobileViT移动端轻量通用视觉transformer_AI小怪兽的博客-CSDN博客">Yolov8涨点技巧：MobileViTAttention助力小目标检测，涨点显著，MobileViT移动端轻量通用视觉transformer_AI小怪兽的博客-CSDN博客</a></p> 
+<p><span style="color:#ff9900;"><strong>11.原创独家首发 | 可变形自注意力Attention：&nbsp;</strong></span><a href="https://cv2023.blog.csdn.net/article/details/131601629" title="YoloV8改进：原创独家首发 | 可变形自注意力Attention，暴力涨点 | 即插即用系列_AI小怪兽的博客-CSDN博客">YoloV8改进：原创独家首发 | 可变形自注意力Attention，暴力涨点 | 即插即用系列_AI小怪兽的博客-CSDN博客</a></p> 
+<p>12. ICCV 2023LSKNet：遥感旋转目标检测新SOTA | LSKblockAttention助力小目标检测&nbsp;：</p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/131934052" title="Yolov8 引入ICCV 2023 | 南开大学提出LSKNet：遥感旋转目标检测新SOTA | LSKblockAttention助力小目标检测_AI小怪兽的博客-CSDN博客">Yolov8 引入ICCV 2023 | 南开大学提出LSKNet：遥感旋转目标检测新SOTA | LSKblockAttention助力小目标检测_AI小怪兽的博客-CSDN博客</a></p> 
+<p><span style="color:#ff9900;"><strong>13.原创独家首发 | 多维协作注意模块MCA：</strong></span></p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/131959116" title="YoloV8改进：原创独家首发 | 多维协作注意模块MCA，暴力涨点，效果秒杀ECA、SRM、CBAM等 | 即插即用系列_AI小怪兽的博客-CSDN博客">YoloV8改进：原创独家首发 | 多维协作注意模块MCA，暴力涨点，效果秒杀ECA、SRM、CBAM等 | 即插即用系列_AI小怪兽的博客-CSDN博客</a></p> 
+<p>&nbsp;14.感受野注意力卷积运算（RFAConv）：</p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/132225892" title="YoloV8优化：感受野注意力卷积运算（RFAConv），效果秒杀CBAM和CA等 | 即插即用系列_AI小怪兽的博客-CSDN博客">YoloV8优化：感受野注意力卷积运算（RFAConv），效果秒杀CBAM和CA等 | 即插即用系列_AI小怪兽的博客-CSDN博客</a></p> 
+<p>15.通道优先卷积注意力（CPCA），2023</p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/132301216" title="YoloV8优化：通道优先卷积注意力，效果秒杀CBAM和SE等 | 即插即用系列_AI小怪兽的博客-CSDN博客">YoloV8优化：通道优先卷积注意力，效果秒杀CBAM和SE等 | 即插即用系列_AI小怪兽的博客-CSDN博客</a></p> 
+<p>16.non-local注意力</p> 
+<p>&nbsp;<a href="https://cv2023.blog.csdn.net/article/details/132317369" title="Yolov8优化：non-local注意力，助力小目标检测_AI小怪兽的博客-CSDN博客">Yolov8优化：non-local注意力，助力小目标检测_AI小怪兽的博客-CSDN博客</a></p> 
+<p><span style="color:#ff9900;"><strong>&nbsp;17.可变形大核注意力，超越自注意力| 2023.8月最新发表</strong></span></p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/132889451" title="全网原创首发Yolov8涨点神器：可变形大核注意力，超越自注意力，实现暴力涨点 | 2023.8月最新发表_AI小怪兽的博客-CSDN博客">全网原创首发Yolov8涨点神器：可变形大核注意力，超越自注意力，实现暴力涨点 | 2023.8月最新发表_AI小怪兽的博客-CSDN博客</a></p> 
+<h3 id="Backbone%26Head%E4%BC%98%E5%8C%96%EF%BC%9A"><a name="t13"></a><span style="color:#fe2c24;">Backbone&amp;Head优化：</span></h3> 
+<p>1.小目标到大目标一网打尽，轻骨干重Neck的轻量级目标检测器GiraffeDet</p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/130625240" title="Yolov8改进：小目标到大目标一网打尽，轻骨干重Neck的轻量级目标检测器GiraffeDet_AI小怪兽的博客-CSDN博客">Yolov8改进：小目标到大目标一网打尽，轻骨干重Neck的轻量级目标检测器GiraffeDet_AI小怪兽的博客-CSDN博客</a></p> 
+<p>2.加权双向特征金字塔网络：</p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/130764328" title="Yolov8涨点技巧：BIFPN，加权双向特征金字塔网络，对小目标涨点显著_AI小怪兽的博客-CSDN博客">Yolov8涨点技巧：BIFPN，加权双向特征金字塔网络，对小目标涨点显著_AI小怪兽的博客-CSDN博客</a></p> 
+<p><span style="color:#a2e043;"><strong>3.华为诺亚2023极简的神经网络模型 VanillaNet---VanillaBlock助力检测:</strong></span></p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/130901017" title="首发Yolov8涨点神器：华为诺亚2023极简的神经网络模型 VanillaNet---VanillaBlock助力检测，实现暴力涨点_AI小怪兽的博客-CSDN博客">首发Yolov8涨点神器：华为诺亚2023极简的神经网络模型 VanillaNet---VanillaBlock助力检测，实现暴力涨点_AI小怪兽的博客-CSDN博客</a></p> 
+<p><span style="color:#a2e043;"><strong>4.&nbsp;ICCV 2023 最新开源移动端网络架构 RepViT：</strong></span></p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/131939062" title="Yolov8引入 清华 ICCV 2023 最新开源移动端网络架构 RepViT | RepViTBlock即插即用，助力检测_AI小怪兽的博客-CSDN博客">Yolov8引入 清华 ICCV 2023 最新开源移动端网络架构 RepViT | RepViTBlock即插即用，助力检测_AI小怪兽的博客-CSDN博客</a></p> 
+<p>5.渐近特征金字塔网络（AFPN）</p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/132225892" title="YoloV8优化：感受野注意力卷积运算（RFAConv），效果秒杀CBAM和CA等 | 即插即用系列_AI小怪兽的博客-CSDN博客">YoloV8优化：感受野注意力卷积运算（RFAConv），效果秒杀CBAM和CA等 | 即插即用系列_AI小怪兽的博客-CSDN博客</a></p> 
+<p>6.轻量级Slim-Neck | 即插即用系列</p> 
+<p>&nbsp;<a href="https://cv2023.blog.csdn.net/article/details/132695998" title="YoloV8优化：轻量级Slim-Neck | 即插即用系列_AI小怪兽的博客-CSDN博客">YoloV8优化：轻量级Slim-Neck | 即插即用系列_AI小怪兽的博客-CSDN博客</a></p> 
+<p><span style="color:#a2e043;"><strong>7.RevCol，大模型架构设计新范式&nbsp;| ICLR 2023&nbsp;</strong></span></p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/132863961" title="YoloV8改进： RevCol，大模型架构设计新范式，ImageNet 90% Top-1 Acc | ICLR 2023_AI小怪兽的博客-CSDN博客">YoloV8改进： RevCol，大模型架构设计新范式，ImageNet 90% Top-1 Acc | ICLR 2023_AI小怪兽的博客-CSDN博客</a></p> 
+<h3 id="%C2%A0IOU%26Loss%E4%BC%98%E5%8C%96%EF%BC%9A"><a name="t14"></a><span style="color:#fe2c24;"><strong>&nbsp;IOU&amp;Loss优化：</strong></span></h3> 
+<p>1.引入WIoU，SIoU，EIoU，α-IoU，不同数据集验证能涨点：<a href="https://cv2023.blog.csdn.net/article/details/130200951" title="涨点技巧：IOU篇---Yolov8引入WIoU，SIoU，EIoU，α-IoU，不同数据集验证能涨点_AI小怪兽的博客-CSDN博客">涨点技巧：IOU篇---Yolov8引入WIoU，SIoU，EIoU，α-IoU，不同数据集验证能涨点_AI小怪兽的博客-CSDN博客</a></p> 
+<p>2.Wasserstein Distance Loss：<a href="https://cv2023.blog.csdn.net/article/details/130321185" title="Yolov8损失函数改进：Wasserstein Distance Loss，助力小目标涨点_AI小怪兽的博客-CSDN博客">Yolov8损失函数改进：Wasserstein Distance Loss，助力小目标涨点_AI小怪兽的博客-CSDN博客</a></p> 
+<p>3.引入Soft-NMS，提升密集遮挡场景检测精度：</p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/131299564" title="Yolov8优化：引入Soft-NMS，提升密集遮挡场景检测精度_AI小怪兽的博客-CSDN博客">Yolov8优化：引入Soft-NMS，提升密集遮挡场景检测精度_AI小怪兽的博客-CSDN博客</a></p> 
+<p>4.引入Soft-NMS并结合各个IOU变体GIOU、DIOU、CIOU、EIOU、SIOU:</p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/131376873" title="Yolov8优化：引入Soft-NMS并结合各个IOU变体GIOU、DIOU、CIOU、EIOU、SIOU，进一步提升密集遮挡场景检测精度_AI小怪兽的博客-CSDN博客">Yolov8优化：引入Soft-NMS并结合各个IOU变体GIOU、DIOU、CIOU、EIOU、SIOU，进一步提升密集遮挡场景检测精度_AI小怪兽的博客-CSDN博客</a></p> 
+<p><span style="color:#38d8f0;"><strong>5. ELSEVIER 2023 MPDIoU新型边界框相似度度量 ：</strong></span></p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/131991064" title="Yolov8损失函数改进：MPDIoU新型边界框相似度度量，效果秒杀GIoU 、 DIoU 、CIoU 、 EIoU等 | ELSEVIER 2023_AI小怪兽的博客-CSDN博客">Yolov8损失函数改进：MPDIoU新型边界框相似度度量，效果秒杀GIoU 、 DIoU 、CIoU 、 EIoU等 | ELSEVIER 2023_AI小怪兽的博客-CSDN博客</a></p> 
+<h3 id="%E5%B0%8F%E7%9B%AE%E6%A0%87%E6%80%A7%E8%83%BD%E6%8F%90%E5%8D%87%EF%BC%9A"><a name="t15"></a><span style="color:#fe2c24;"><strong>小目标性能提升：</strong></span></h3> 
+<p><strong><span style="color:#956fe7;">1.CVPR2023 InceptionNeXt，助力小目标检测：</span></strong></p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/130235709" title="涨点神器：CVPR2023 InceptionNeXt当Inception遇见ConvNeXt，在Yolov8即插即用，小目标检测涨点明显_AI小怪兽的博客-CSDN博客">涨点神器：CVPR2023 InceptionNeXt当Inception遇见ConvNeXt，在Yolov8即插即用，小目标检测涨点明显_AI小怪兽的博客-CSDN博客</a></p> 
+<p>2.&nbsp;小目标遮挡物性能提升（SEAM、MultiSEAM）：</p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/130264580" title="涨点神器：基于Yolov8小目标遮挡物性能提升（SEAM、MultiSEAM）_AI小怪兽的博客-CSDN博客">涨点神器：基于Yolov8小目标遮挡物性能提升（SEAM、MultiSEAM）_AI小怪兽的博客-CSDN博客</a></p> 
+<p>3.多头检测头提升小目标检测精度：</p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/130320919" title="涨点技巧：基于Yolov8的微小目标检测，多头检测头提升小目标检测精度_AI小怪兽的博客-CSDN博客">涨点技巧：基于Yolov8的微小目标检测，多头检测头提升小目标检测精度_AI小怪兽的博客-CSDN博客</a></p> 
+<p>4.NWD 应用于基于锚的检测器中的标签分配、NMS 和损失函数来设计强大的微小物体检测器:</p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/130321185" title="Yolov8损失函数改进：Wasserstein Distance Loss，助力小目标涨点_AI小怪兽的博客-CSDN博客">Yolov8损失函数改进：Wasserstein Distance Loss，助力小目标涨点_AI小怪兽的博客-CSDN博客</a></p> 
+<p>5.SPD-Conv，低分辨率图像和小物体涨点明显:</p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/130487778" title="涨点神器：基于Yolov8的SPD-Conv，低分辨率图像和小物体涨点明显_AI小怪兽的博客-CSDN博客">涨点神器：基于Yolov8的SPD-Conv，低分辨率图像和小物体涨点明显_AI小怪兽的博客-CSDN博客</a></p> 
+<p>6. ECVBlock的小目标检测，即插即用，助力检测涨点:</p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/130522054" title="YoloV8涨点神器：CFPNet-ECVBlock的小目标检测，即插即用，助力检测涨点_AI小怪兽的博客-CSDN博客">YoloV8涨点神器：CFPNet-ECVBlock的小目标检测，即插即用，助力检测涨点_AI小怪兽的博客-CSDN博客</a></p> 
+<p>7.微小目标检测的上下文增强和特征细化网络：</p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/130886034" title="Yolov8涨点神器：用于微小目标检测的上下文增强和特征细化网络ContextAggregation，助力小目标检测，暴力涨点_AI小怪兽的博客-CSDN博客">Yolov8涨点神器：用于微小目标检测的上下文增强和特征细化网络ContextAggregation，助力小目标检测，暴力涨点_AI小怪兽的博客-CSDN博客</a></p> 
+<p>8.BIFPN，对小目标涨点显著：</p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/130764328" title="Yolov8涨点技巧：BIFPN，加权双向特征金字塔网络，对小目标涨点显著_AI小怪兽的博客-CSDN博客">Yolov8涨点技巧：BIFPN，加权双向特征金字塔网络，对小目标涨点显著_AI小怪兽的博客-CSDN博客</a></p> 
+<p>9.ODConv+ConvNeXt提升小目标检测能力：</p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/130972065" title="Yolov8涨点神器：ODConv+ConvNeXt提升小目标检测能力_AI小怪兽的博客-CSDN博客">Yolov8涨点神器：ODConv+ConvNeXt提升小目标检测能力_AI小怪兽的博客-CSDN博客</a></p> 
+<p><strong><span style="background-color:#956fe7;">10.引入CVPR 2023 BiFormer,对小目标涨点明显：</span></strong></p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/130260561" title="Yolov8 引入CVPR 2023 BiFormer: 基于动态稀疏注意力构建高效金字塔网络架构，对小目标涨点明显_AI小怪兽的博客-CSDN博客">Yolov8 引入CVPR 2023 BiFormer: 基于动态稀疏注意力构建高效金字塔网络架构，对小目标涨点明显_AI小怪兽的博客-CSDN博客</a></p> 
+<p>11.渐近特征金字塔网络（AFPN）</p> 
+<p>&nbsp;<a href="https://cv2023.blog.csdn.net/article/details/132229675" title="Yolov8优化：渐近特征金字塔网络（AFPN）| 助力小目标检测_AI小怪兽的博客-CSDN博客">Yolov8优化：渐近特征金字塔网络（AFPN）| 助力小目标检测_AI小怪兽的博客-CSDN博客</a></p> 
+<h3 id="%E4%BC%98%E5%8C%96%E5%99%A8%E6%94%B9%E8%BF%9B%EF%BC%9A"><a name="t16"></a><span style="color:#fe2c24;">优化器改进：</span></h3> 
+<p>1.谷歌2023强势推出优化器Lion：</p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/130222697" title="涨点技巧： 谷歌强势推出优化器Lion，引入到Yolov8/Yolv5,内存更小、效率更高，秒杀Adam(W)_AI小怪兽的博客-CSDN博客">涨点技巧： 谷歌强势推出优化器Lion，引入到Yolov8/Yolv5,内存更小、效率更高，秒杀Adam(W)_AI小怪兽的博客-CSDN博客</a></p> 
+<p>2.Adam该换了！斯坦福2023最新Sophia优化器，比Adam快2倍：</p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/130912702" title="首发Yolov8优化：Adam该换了！斯坦福最新Sophia优化器，比Adam快2倍 | 2023.5月斯坦福最新成果_最新的优化器_AI小怪兽的博客-CSDN博客">首发Yolov8优化：Adam该换了！斯坦福最新Sophia优化器，比Adam快2倍 | 2023.5月斯坦福最新成果_最新的优化器_AI小怪兽的博客-CSDN博客</a></p> 
+<h3 id="%E5%8D%B7%E7%A7%AF%E5%8F%98%E4%BD%93%E6%94%B9%E8%BF%9B%EF%BC%9A"><a name="t17"></a><span style="color:#fe2c24;">卷积变体改进：</span></h3> 
+<p>1.卷积变体DCNV2</p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/130215147" title="涨点技巧：卷积变体DCNV2引入Yolov8，助力小目标涨点_AI小怪兽的博客-CSDN博客">涨点技巧：卷积变体DCNV2引入Yolov8，助力小目标涨点_AI小怪兽的博客-CSDN博客</a></p> 
+<p>2.SPD-Conv:</p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/130487778" title="涨点神器：基于Yolov8的SPD-Conv，低分辨率图像和小物体涨点明显_AI小怪兽的博客-CSDN博客">涨点神器：基于Yolov8的SPD-Conv，低分辨率图像和小物体涨点明显_AI小怪兽的博客-CSDN博客</a></p> 
+<p>3.卷积块NCB和创新Transformer 块NTB：</p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/131043351" title="Yolov8涨点神器：创新卷积块NCB和创新Transformer 块NTB,助力检测，提升检测精度_AI小怪兽的博客-CSDN博客">Yolov8涨点神器：创新卷积块NCB和创新Transformer 块NTB,助力检测，提升检测精度_AI小怪兽的博客-CSDN博客</a></p> 
+<p><span style="color:#1c7331;"><strong>4.CVPR2023 InternImage：注入新机制，扩展DCNv3:</strong></span></p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/130224460" title="涨点神器：Yolov8引入CVPR2023 InternImage：注入新机制，扩展DCNv3，助力涨点，COCO新纪录65.4mAP！_AI小怪兽的博客-CSDN博客">涨点神器：Yolov8引入CVPR2023 InternImage：注入新机制，扩展DCNv3，助力涨点，COCO新纪录65.4mAP！_AI小怪兽的博客-CSDN博客</a></p> 
+<p><span style="color:#1c7331;"><strong>5.CVPR2023 FasterNet远超ShuffleNet、MobileNet、MobileViT，引入PConv结构:</strong></span></p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/130225022" title="涨点神器：Yolov8改进CVPR2023 FasterNet远超ShuffleNet、MobileNet、MobileViT，引入PConv结构map涨点的同时进一步降低参数量_AI小怪兽的博客-CSDN博客">涨点神器：Yolov8改进CVPR2023 FasterNet远超ShuffleNet、MobileNet、MobileViT，引入PConv结构map涨点的同时进一步降低参数量_AI小怪兽的博客-CSDN博客</a></p> 
+<p><span style="color:#1c7331;"><strong>6.CVPR2023 SCConv：空间和通道重建卷积：</strong></span></p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/131958195" title="Yolov8引入CVPR2023 SCConv：空间和通道重建卷积，即插即用，助力检测_AI小怪兽的博客-CSDN博客">Yolov8引入CVPR2023 SCConv：空间和通道重建卷积，即插即用，助力检测_AI小怪兽的博客-CSDN博客</a></p> 
+<p><span style="color:#1c7331;">7.<strong>&nbsp;可变形大核注意力，超越自注意力| 2023.8月最新发表</strong>&nbsp;</span></p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/132889451" title="全网原创首发Yolov8涨点神器：可变形大核注意力，超越自注意力，实现暴力涨点 | 2023.8月最新发表_AI小怪兽的博客-CSDN博客">全网原创首发Yolov8涨点神器：可变形大核注意力，超越自注意力，实现暴力涨点 | 2023.8月最新发表_AI小怪兽的博客-CSDN博客</a></p> 
+<p><span style="color:#1c7331;"><strong>8.动态蛇形卷积（Dynamic Snake Convolution）&nbsp;| ICCV2023&nbsp;</strong></span>&nbsp;<a href="https://cv2023.blog.csdn.net/article/details/132689577" title="首发Yolov8涨点神器：动态蛇形卷积（Dynamic Snake Convolution），实现暴力涨点 | ICCV2023_AI小怪兽的博客-CSDN博客">首发Yolov8涨点神器：动态蛇形卷积（Dynamic Snake Convolution），实现暴力涨点 | ICCV2023_AI小怪兽的博客-CSDN博客</a></p> 
+<h3 id="%C2%A0%E8%BD%BB%E9%87%8F%E7%BA%A7%E7%BD%91%E7%BB%9C%E7%BB%93%E5%90%88yolov8%3A"><a name="t18"></a><span style="color:#fe2c24;">&nbsp;轻量级网络结合yolov8:</span></h3> 
+<p>1.华为Ghostnet，超越谷歌MobileNet | CVPR2020:</p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/131299771" title="Yolov8轻量级网络：Ghostnet、G_ghost、Ghostnetv2家族大作战（一）：华为Ghostnet，超越谷歌MobileNet | CVPR2020_AI小怪兽的博客-CSDN博客">Yolov8轻量级网络：Ghostnet、G_ghost、Ghostnetv2家族大作战（一）：华为Ghostnet，超越谷歌MobileNet | CVPR2020_AI小怪兽的博客-CSDN博客</a></p> 
+<p>2.华为Ghostnetv2，端侧小模型性能新SOTA | NeurIPS22 Spotlight:</p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/131300994" title="Yolov8轻量级网络：Ghostnet、G_ghost、Ghostnetv2家族大作战（二）：华为Ghostnetv2，端侧小模型性能新SOTA | NeurIPS22 Spotlight_AI小怪兽的博客-CSDN博客">Yolov8轻量级网络：Ghostnet、G_ghost、Ghostnetv2家族大作战（二）：华为Ghostnetv2，端侧小模型性能新SOTA | NeurIPS22 Spotlight_AI小怪兽的博客-CSDN博客</a></p> 
+<p>3.华为GhostNet再升级，全系列硬件上最优极简AI网络G_ghost | IJCV22:</p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/131301450" title="Yolov8轻量级网络：Ghostnet、G_ghost、Ghostnetv2家族大作战（三）：华为GhostNet再升级，全系列硬件上最优极简AI网络G_ghost | IJCV22_AI小怪兽的博客-CSDN博客">Yolov8轻量级网络：Ghostnet、G_ghost、Ghostnetv2家族大作战（三）：华为GhostNet再升级，全系列硬件上最优极简AI网络G_ghost | IJCV22_AI小怪兽的博客-CSDN博客</a></p> 
+<p>4.RepGhost，通过重参数化实现硬件高效的Ghost模块：</p> 
+<p><a href="https://cv2023.blog.csdn.net/article/details/131991064" title="Yolov8损失函数改进：MPDIoU新型边界框相似度度量，效果秒杀GIoU 、 DIoU 、CIoU 、 EIoU等 | ELSEVIER 2023_AI小怪兽的博客-CSDN博客">Yolov8损失函数改进：MPDIoU新型边界框相似度度量，效果秒杀GIoU 、 DIoU 、CIoU 、 EIoU等 | ELSEVIER 2023_AI小怪兽的博客-CSDN博客</a></p> 
+<p></p> 
+<p></p> 
+<p><strong><span style="color:#fe2c24;">本专栏使用V8版本源码：</span></strong></p> 
+<p>&nbsp;链接：https://pan.baidu.com/s/1EShQTIEK6eiHILkMOMgVTQ&nbsp;<br> 提取码：0h3j&nbsp;<br> --来自百度网盘超级会员V6的分享</p>
+                </div><div data-report-view="{&quot;mod&quot;:&quot;1585297308_001&quot;,&quot;spm&quot;:&quot;1001.2101.3001.6548&quot;,&quot;dest&quot;:&quot;https://cv2023.blog.csdn.net/article/details/131519223&quot;,&quot;extend1&quot;:&quot;pc&quot;,&quot;ab&quot;:&quot;new&quot;}"><div></div></div>
+        </div>
