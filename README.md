@@ -13,7 +13,8 @@ model.train(data="/root/result/visdrone.yaml", epochs=200, batch=32)
 
 ## 改进流程
 
-- 编写模块算法，放在 ultralytics/nn/attention 路径
+- ultralytics 路径：envs/lib/python3.9/site-packages/ultralytics -> envs 为 python 环境目录
+- 编写模块算法，放在 ultralytics/nn/attention 路径 -> 新建 attention 文件夹
 - 更改 ultralytics/nn/tasks.py 文件
   - 注册新模块
   - 更改 parse_model 函数
@@ -21,7 +22,7 @@ model.train(data="/root/result/visdrone.yaml", epochs=200, batch=32)
 
 ## 现有方法
 
-### yolov8-改进
+### 存放在 yolov8-改进 文件夹
 
 ### 方法示例
 
